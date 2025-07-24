@@ -1,16 +1,37 @@
-"use client";
+// src/components/BackgroundSparkles.tsx
+'use client';
+
+import { useEffect, useState } from "react";
+
+type Sparkle = {
+  top: number;
+  left: number;
+  delay: number;
+};
 
 export default function BackgroundSparkles() {
+  const [sparkles, setSparkles] = useState<Sparkle[]>([]);
+
+  useEffect(() => {
+    const newSparkles: Sparkle[] = Array.from({ length: 50 }).map(() => ({
+      top: Math.random() * window.innerHeight,
+      left: Math.random() * window.innerWidth,
+      delay: Math.random() * 3,
+    }));
+    setSparkles(newSparkles);
+  }, []);
+
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      {Array.from({ length: 50 }).map((_, i) => (
+    <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+      {sparkles.map((sparkle, i) => (
         <div
           key={i}
-          className="sparkle"
+          className="absolute w-1 h-1 bg-white rounded-full opacity-70 animate-pulse"
           style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDelay: `${(Math.random() * 3).toFixed(2)}s`,
+            top: sparkle.top,
+            left: sparkle.left,
+            animationDelay: `${sparkle.delay}s`,
+            position: "absolute",
           }}
         />
       ))}

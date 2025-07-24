@@ -1,12 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/sections/Hero";
-import About from '@/components/About';
+import About from "@/components/About";
+import BackgroundSparkles from "@/components/BackgroundSparkles";
+
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="relative min-h-screen text-black overflow-hidden">
+      <BackgroundSparkles />
       <Navbar />
       <Hero />
-            <About /> 
+      <About />
     </main>
   );
 }
