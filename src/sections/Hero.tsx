@@ -3,10 +3,18 @@
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import BackgroundSparkles from '@/components/BackgroundSparkles';
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center text-center py-20">
+    <section
+      id="hero"
+      className="relative h-screen w-full flex flex-col items-center justify-center text-center px-4 bg-white dark:bg-black overflow-hidden"
+    >
+      {/* Sparkles Background */}
+      <BackgroundSparkles />
+
+      {/* Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -20,11 +28,11 @@ export default function Hero() {
           className="rounded-full shadow-xl mb-6"
         />
 
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">
           Hi, I’m <span className="text-blue-500">Athmi</span>
         </h1>
 
-        <h2 className="text-xl text-gray-600 mb-6">
+        <h2 className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-6">
           <Typewriter
             words={[
               'Web Developer 💻',
@@ -47,8 +55,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <a
-            href="#projects"
-            className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition"
+            href="#about"
+            className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition font-medium"
           >
             View My Work
           </a>

@@ -1,7 +1,5 @@
-// src/components/BackgroundSparkles.tsx
 'use client';
-
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 type Sparkle = {
   top: number;
@@ -22,7 +20,7 @@ export default function BackgroundSparkles() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 -z-10 pointer-events-none">
       {sparkles.map((sparkle, i) => (
         <div
           key={i}
@@ -31,7 +29,6 @@ export default function BackgroundSparkles() {
             top: sparkle.top,
             left: sparkle.left,
             animationDelay: `${sparkle.delay}s`,
-            position: "absolute",
           }}
         />
       ))}
