@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/sections/Hero";
 import About from "@/components/About";
 import Education from '@/sections/Education';
+import Certifications from '@/sections/Certifications';
 import BackgroundSparkles from "@/components/BackgroundSparkles";
 
 
@@ -12,7 +13,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Education /> {/* Add this line to render Education */}
+      <Education />
+      <Certifications />
     </main>
   );
 }
