@@ -30,12 +30,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.div
-          className="relative mb-6 mx-auto"
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        >
+        <div className="relative mb-6 mx-auto">
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 blur-lg opacity-30 animate-pulse"></div>
           <Image
             src="/profile-pic.PNG"
@@ -44,7 +39,7 @@ export default function Hero() {
             height={200}
             className="relative rounded-full shadow-2xl w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 object-cover border-4 border-white dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300"
           />
-        </motion.div>
+        </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black dark:text-white">
           Hi, I’m <span className="text-blue-600 dark:text-blue-400 font-extrabold">Athmi</span>
