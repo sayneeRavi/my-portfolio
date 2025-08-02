@@ -3,6 +3,7 @@ import Hero from "@/sections/Hero";
 import About from "@/components/About";
 import Education from '@/sections/Education';
 import Certifications from '@/sections/Certifications';
+import Projects from '@/sections/Projects';
 import BackgroundSparkles from "@/components/BackgroundSparkles";
 
 
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Education />
       <Certifications />
+      <Projects />
     </main>
   );
 }
