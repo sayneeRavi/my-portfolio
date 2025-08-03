@@ -8,7 +8,7 @@ export default function Projects() {
     {
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with Next.js and Framer Motion. Features dark mode, smooth animations, certifications showcase, and optimized performance. Demonstrates my skills in web development and UI/UX design.",
-      image: "/project-portfolio.jpg",
+      image: "/my portfolio.png",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
       liveUrl: "https://athmisayneedev.vercel.app/",
       githubUrl: "https://github.com/sayneeRavi/my-portfolio",
@@ -17,41 +17,41 @@ export default function Projects() {
     {
       title: "NeuroSync WBC",
       description: "Advanced neurological data analysis system for White Blood Cell classification and monitoring. Collaborative project focusing on medical data processing and machine learning applications in healthcare diagnostics.",
-      image: "/project-neurosync.jpg",
+      image: "/NeuroSync.jpg",
       technologies: ["Python", "Machine Learning", "Data Analysis", "Medical Imaging", "TensorFlow"],
       liveUrl: "#",
       githubUrl: "https://github.com/Abinaya-Subramaniam/neurosync_WBC"
     },
     {
-      title: "RMA Backend System",
-      description: "Robust backend infrastructure for Return Merchandise Authorization (RMA) management system. Handles complex business logic for product returns, inventory management, and customer service workflows.",
-      image: "/project-rma.jpg",
-      technologies: ["Node.js", "Express", "Database Management", "API Development", "Backend Architecture"],
-      liveUrl: "#",
-      githubUrl: "https://github.com/rma-organization/rmabackend"
-    },
-    {
       title: "Stroke Dashboard",
       description: "Interactive medical dashboard for stroke patient data visualization and analysis. Features real-time monitoring, data analytics, and comprehensive reporting tools for healthcare professionals.",
-      image: "/project-stroke.jpg",
+      image: "/Stroke Dashboard.png",
       technologies: ["React", "Data Visualization", "Chart.js", "Medical Data", "Dashboard UI"],
       liveUrl: "#",
       githubUrl: "https://github.com/sayneeRavi/stroke-dashboard"
     },
     {
-      title: "Healthcare Analytics Project",
-      description: "Comprehensive healthcare data analysis project showcased on LinkedIn. Demonstrates expertise in medical data processing, statistical analysis, and healthcare technology solutions.",
-      image: "/project-healthcare.jpg",
-      technologies: ["Data Analytics", "Healthcare Technology", "Statistical Analysis", "Medical Informatics"],
-      liveUrl: "https://www.linkedin.com/posts/athmisaynee-raveendran-968664267_7251813314903617538-ce3T",
+      title: "Green Care Assist",
+      description: "Innovative healthcare assistance application focused on providing green and sustainable healthcare solutions. Features user-friendly interface and comprehensive care management tools.",
+      image: "/Green care assist .jpg",
+      technologies: ["Healthcare Technology", "Sustainable Solutions", "User Interface", "Care Management"],
+      liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Medical Technology Innovation",
-      description: "Innovative medical technology project focused on improving healthcare outcomes through data-driven solutions. Featured project highlighting my contributions to the healthcare technology sector.",
-      image: "/project-medtech.jpg",
-      technologies: ["Medical Technology", "Innovation", "Healthcare Solutions", "Data Science"],
-      liveUrl: "https://www.linkedin.com/posts/athmisaynee-raveendran-968664267_7251525160774615040-yUey",
+      title: "MIT Login System",
+      description: "Secure authentication system with modern login interface. Features robust security measures, user-friendly design, and efficient session management for educational institutions.",
+      image: "/MIT login.JPG",
+      technologies: ["Authentication", "Security", "Web Development", "User Interface", "Session Management"],
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "TREK Adventure Platform",
+      description: "Adventure and trekking platform that connects outdoor enthusiasts with exciting trekking opportunities. Features interactive maps, booking system, and community features.",
+      image: "/TREK.jpg",
+      technologies: ["Web Development", "Interactive Maps", "Booking System", "Community Platform", "Adventure Tech"],
+      liveUrl: "#",
       githubUrl: "#"
     }
   ];
