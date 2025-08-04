@@ -1,5 +1,6 @@
 'use client';
 
+// Updated image paths for deployment compatibility
 import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
 
