@@ -9,7 +9,8 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Education', href: '#education' },
     { name: 'Certifications', href: '#certifications' },
-    { name: 'Projects', href: '#projects' }
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' }
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
