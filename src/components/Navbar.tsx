@@ -1,28 +1,28 @@
 'use client';
 
-import { useState, useEffect, MouseEvent } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 type NavItem = {
   name: string;
   href: string;
 };
 
-const NAV_ITEMS: NavItem[] = [
-  { name: 'About', href: '#about' },
-  { name: 'Education', href: '#education' },
-  { name: 'Certifications', href: '#certifications' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' }
-];
-
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
 
-  const handleSmoothScroll = (e: MouseEvent<HTMLAnchorElement | HTMLHeadingElement>, href: string) => {
+  const navItems: NavItem[] = useMemo(() => [
+    { name: 'About', href: '#about' },
+    { name: 'Education', href: '#education' },
+    { name: 'Certifications', href: '#certifications' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' }
+  ], []);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLHeadingElement>, href: string) => {
     e.preventDefault();
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
-
+    
     if (targetElement) {
       targetElement.scrollIntoView({
         behavior: 'smooth',
@@ -33,10 +33,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const sections = navItems.map(item => item.href.substring(1));
       const scrollPosition = window.scrollY + 100;
 
-      for (const item of NAV_ITEMS) {
-        const sectionId = item.href.substring(1);
+      for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
@@ -50,12 +50,13 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []); // ✅ safe since NAV_ITEMS is constant and not redefined
+  }, [navItems]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <div className="flex-shrink-0">
             <h1
               className="text-xl font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
@@ -65,9 +66,10 @@ const Navbar = () => {
             </h1>
           </div>
 
+          {/* Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {NAV_ITEMS.map((item) => (
+              {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -84,6 +86,7 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               type="button"
@@ -92,17 +95,18 @@ const Navbar = () => {
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
-              <svg className="block h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
         </div>
       </div>
 
+      {/* Mobile menu */}
       <div className="md:hidden" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
