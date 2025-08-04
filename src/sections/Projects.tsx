@@ -9,7 +9,7 @@ export default function Projects() {
     {
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with Next.js and Framer Motion. Features dark mode, smooth animations, certifications showcase, and optimized performance. Demonstrates my skills in web development and UI/UX design.",
-      image: "/my-portfolio.png",
+      image: "/my%20portfolio.png",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
       liveUrl: "https://athmisayneedev.vercel.app/",
       githubUrl: "https://github.com/sayneeRavi/my-portfolio",
@@ -18,7 +18,7 @@ export default function Projects() {
     {
       title: "NeuroSync - FaceCues",
       description: "Autism therapy website featuring FaceCues - a real-time facial expression analysis system for kids. My contribution involved using webcam to capture screenshots, processing them with OpenCV, and sending data to backend for facial expression analysis to assist in autism therapy sessions.",
-      image: "/neurosync.jpg",
+      image: "/NeuroSync.jpg",
       technologies: ["Python", "OpenCV", "Webcam Integration", "Real-time Processing", "Facial Recognition", "Healthcare Technology"],
       liveUrl: "#",
       githubUrl: "https://github.com/Abinaya-Subramaniam/neurosync_WBC"
@@ -26,7 +26,7 @@ export default function Projects() {
     {
       title: "Stroke Dashboard",
       description: "Interactive medical dashboard for stroke patient data visualization and analysis. Features real-time monitoring, data analytics, and comprehensive reporting tools for healthcare professionals.",
-      image: "/stroke-dashboard.png",
+      image: "/Stroke%20Dashboard.png",
       technologies: ["React", "Data Visualization", "Chart.js", "Medical Data", "Dashboard UI"],
       liveUrl: "#",
       githubUrl: "https://github.com/sayneeRavi/stroke-dashboard"
@@ -34,7 +34,7 @@ export default function Projects() {
     {
       title: "Green Care Assist",
       description: "Innovative first-year hardware project at University of Moratuwa - an automated ornamental plant care system. Features environmental control with temperature, humidity, and soil moisture monitoring, Peltier devices for temperature control, customized lighting, and transparent design. Creates optimal growing conditions for rare and exotic plants with minimal user intervention.",
-      image: "/green-care-assist.jpg",
+      image: "/Green%20care%20assist%20.jpg",
       technologies: ["Hardware Design", "Environmental Control", "Peltier Devices", "IoT Sensors", "Automated Systems", "Plant Care Technology"],
       liveUrl: "#",
       githubUrl: "#"
@@ -42,7 +42,7 @@ export default function Projects() {
     {
       title: "MITESP RMA Web Application",
       description: "Enterprise-level Return Merchandise Authorization (RMA) web application for MITESP, streamlining hardware replacement processes with vendors like Oracle, Hitachi, Veritas, Huawei, and Cisco. My contributions included UI/UX design, full-stack development, authentication/authorization system, role-based access control (RBAC), and comprehensive CRUD operations for inventory management.",
-      image: "/mit-login.jpg",
+      image: "/MIT%20login.JPG",
       technologies: ["React", "Spring Boot", "JWT Authentication", "SMTP", "RBAC", "Full-Stack Development", "UI/UX Design", "Enterprise Systems"],
       liveUrl: "#",
       githubUrl: "https://github.com/rma-organization"
@@ -50,7 +50,7 @@ export default function Projects() {
     {
       title: "TREK Adventure Platform",
       description: "Adventure and trekking platform connecting outdoor enthusiasts with exciting trekking opportunities. My contribution focused on UI/UX design using Figma, creating intuitive user interfaces, wireframes, and design systems for the platform's interactive maps, booking system, and community features.",
-      image: "/trek.jpg",
+      image: "/TREK.jpg",
       technologies: ["Figma", "UI/UX Design", "Wireframing", "Design Systems", "User Interface Design", "Prototyping"],
       liveUrl: "#",
       githubUrl: "#"
