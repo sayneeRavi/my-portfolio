@@ -1,23 +1,26 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, MouseEvent } from 'react';
+
+const navItems = [
+  { name: 'About', href: '#about' },
+  { name: 'Education', href: '#education' },
+  { name: 'Certifications', href: '#certifications' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Contact', href: '#contact' }
+];
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
 
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Education', href: '#education' },
-    { name: 'Certifications', href: '#certifications' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
-  ];
-
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSmoothScroll = (
+    e: MouseEvent<HTMLElement>,
+    href: string
+  ) => {
     e.preventDefault();
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
-    
+
     if (targetElement) {
       targetElement.scrollIntoView({
         behavior: 'smooth',
@@ -45,7 +48,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, []); // ✅ now safe to keep as []
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
@@ -53,8 +56,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
-                onClick={(e) => handleSmoothScroll(e as any, '#hero')}>
+            <h1
+              className="text-xl font-bold text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
+              onClick={(e) => handleSmoothScroll(e, '#hero')}
+            >
               Athmi.dev
             </h1>
           </div>
