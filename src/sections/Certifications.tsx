@@ -30,36 +30,39 @@ export default function Certifications() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <CertificationCard
-            title="AI/ML Engineer Certification"
-            issuer="SLIIT Centre for Open & Distance Education"
+            title="AI Agents Certification"
+            issuer="Professional Development"
             date="2025"
-            description="Comprehensive certification covering machine learning fundamentals, deep learning, and practical AI implementation. Gained hands-on experience with industry-standard tools and frameworks."
-            skills={["TensorFlow", "PyTorch", "Machine Learning", "Deep Learning", "Python", "Data Science"]}
-            credentialId="SLIIT-AIML-2025"
+            description="Advanced certification in AI Agents development, covering autonomous systems, intelligent automation, and AI-driven solutions."
+            skills={["AI Agents", "Automation", "Machine Learning", "Intelligent Systems", "Python"]}
+            certificateUrl="/Ai agents.webp"
           />
 
           <CertificationCard
-            title="Full Stack Development"
-            issuer="Self-Directed Learning"
+            title="Data Analyst Certification"
+            issuer="Professional Development"
             date="2024"
-            description="Comprehensive full-stack development skills through hands-on projects and continuous learning. Proficient in modern web technologies and frameworks."
-            skills={["React", "Next.js", "Node.js", "TypeScript", "Tailwind CSS", "MongoDB"]}
+            description="Comprehensive data analysis certification covering statistical analysis, data visualization, and business intelligence techniques."
+            skills={["Data Analysis", "Statistics", "Data Visualization", "Business Intelligence", "SQL", "Excel"]}
+            certificateUrl="/Dataanalyst.pdf"
           />
 
           <CertificationCard
-            title="Programming Fundamentals Excellence"
-            issuer="University of Moratuwa"
-            date="2023"
-            description="Achieved top grades in core programming subjects including Data Structures & Algorithms, Object-Oriented Programming, and Software Engineering."
-            skills={["Java", "Python", "C++", "DSA", "OOP", "Software Engineering"]}
+            title="Python for Beginners"
+            issuer="E-Learning Platform"
+            date="2024"
+            description="Foundational Python programming certification covering syntax, data structures, algorithms, and practical programming applications."
+            skills={["Python", "Programming Fundamentals", "Data Structures", "Algorithms", "Problem Solving"]}
+            certificateUrl="/Python_for_Beginners_E-Certificate.pdf"
           />
 
           <CertificationCard
-            title="Academic Excellence"
-            issuer="G.C.E. Advanced Level"
-            date="2022"
-            description="Strong academic foundation in Biological Sciences, demonstrating analytical thinking and problem-solving abilities that translate well to programming and technology."
-            skills={["Analytical Thinking", "Problem Solving", "Research", "Scientific Method"]}
+            title="Web Design for Beginners"
+            issuer="E-Learning Platform"
+            date="2024"
+            description="Web design fundamentals certification covering HTML, CSS, responsive design principles, and modern web development practices."
+            skills={["HTML", "CSS", "Responsive Design", "Web Development", "UI/UX Basics"]}
+            certificateUrl="/Web_Design_for_Beginners_E-Certificate.pdf"
           />
         </div>
 

@@ -56,7 +56,7 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <InfoCard
             title="Projects"
-            value="10+"
+            value="4+"
             link="https://github.com/sayneeRavi?tab=repositories"
           />
           <InfoCard title="Years Coding" value="3+" />
