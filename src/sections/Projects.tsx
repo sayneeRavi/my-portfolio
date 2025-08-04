@@ -15,10 +15,10 @@ export default function Projects() {
       featured: true
     },
     {
-      title: "NeuroSync WBC",
-      description: "Advanced neurological data analysis system for White Blood Cell classification and monitoring. Collaborative project focusing on medical data processing and machine learning applications in healthcare diagnostics.",
+      title: "NeuroSync - FaceCues",
+      description: "Autism therapy website featuring FaceCues - a real-time facial expression analysis system for kids. My contribution involved using webcam to capture screenshots, processing them with OpenCV, and sending data to backend for facial expression analysis to assist in autism therapy sessions.",
       image: "/NeuroSync.jpg",
-      technologies: ["Python", "Machine Learning", "Data Analysis", "Medical Imaging", "TensorFlow"],
+      technologies: ["Python", "OpenCV", "Webcam Integration", "Real-time Processing", "Facial Recognition", "Healthcare Technology"],
       liveUrl: "#",
       githubUrl: "https://github.com/Abinaya-Subramaniam/neurosync_WBC"
     },
@@ -32,25 +32,25 @@ export default function Projects() {
     },
     {
       title: "Green Care Assist",
-      description: "Innovative healthcare assistance application focused on providing green and sustainable healthcare solutions. Features user-friendly interface and comprehensive care management tools.",
+      description: "Innovative first-year hardware project at University of Moratuwa - an automated ornamental plant care system. Features environmental control with temperature, humidity, and soil moisture monitoring, Peltier devices for temperature control, customized lighting, and transparent design. Creates optimal growing conditions for rare and exotic plants with minimal user intervention.",
       image: "/Green care assist .jpg",
-      technologies: ["Healthcare Technology", "Sustainable Solutions", "User Interface", "Care Management"],
+      technologies: ["Hardware Design", "Environmental Control", "Peltier Devices", "IoT Sensors", "Automated Systems", "Plant Care Technology"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "MIT Login System",
-      description: "Secure authentication system with modern login interface. Features robust security measures, user-friendly design, and efficient session management for educational institutions.",
+      title: "MITESP RMA Web Application",
+      description: "Enterprise-level Return Merchandise Authorization (RMA) web application for MITESP, streamlining hardware replacement processes with vendors like Oracle, Hitachi, Veritas, Huawei, and Cisco. My contributions included UI/UX design, full-stack development, authentication/authorization system, role-based access control (RBAC), and comprehensive CRUD operations for inventory management.",
       image: "/MIT login.JPG",
-      technologies: ["Authentication", "Security", "Web Development", "User Interface", "Session Management"],
+      technologies: ["React", "Spring Boot", "JWT Authentication", "SMTP", "RBAC", "Full-Stack Development", "UI/UX Design", "Enterprise Systems"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
       title: "TREK Adventure Platform",
-      description: "Adventure and trekking platform that connects outdoor enthusiasts with exciting trekking opportunities. Features interactive maps, booking system, and community features.",
+      description: "Adventure and trekking platform connecting outdoor enthusiasts with exciting trekking opportunities. My contribution focused on UI/UX design using Figma, creating intuitive user interfaces, wireframes, and design systems for the platform's interactive maps, booking system, and community features.",
       image: "/TREK.jpg",
-      technologies: ["Web Development", "Interactive Maps", "Booking System", "Community Platform", "Adventure Tech"],
+      technologies: ["Figma", "UI/UX Design", "Wireframing", "Design Systems", "User Interface Design", "Prototyping"],
       liveUrl: "#",
       githubUrl: "#"
     }
@@ -75,7 +75,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -83,7 +83,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true, amount: 0.2 }}
-              className={project.featured ? "md:col-span-2 lg:col-span-2" : ""}
+              className="h-full"
             >
               <ProjectCard
                 title={project.title}

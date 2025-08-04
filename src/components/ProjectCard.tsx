@@ -28,9 +28,7 @@ export default function ProjectCard({
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.3 }}
       whileHover={{ y: -8 }}
-      className={`group relative bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 ${
-        featured ? 'md:col-span-2' : ''
-      }`}
+      className="group relative bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 h-full flex flex-col"
     >
       {/* Project Image */}
       <div className="relative h-48 md:h-56 overflow-hidden">
@@ -86,17 +84,17 @@ export default function ProjectCard({
       </div>
 
       {/* Project Content */}
-      <div className="p-6">
+      <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-semibold text-black dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed flex-1">
           {description}
         </p>
         
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {technologies.map((tech, index) => (
             <motion.span
               key={tech}
