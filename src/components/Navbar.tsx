@@ -13,18 +13,24 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { name: 'About', href: '#about' },
   { name: 'Education', href: '#education' },
-  { name: 'Certifications', href: '#certifications' },
+  { name: 'Certifications', href: 'https://www.linkedin.com/in/athmisaynee-raveendran-968664267/details/certifications/' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' }
 ];
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleSmoothScroll = (
     e: MouseEvent<HTMLAnchorElement | HTMLHeadingElement>,
     href: string
   ) => {
+    // Allow default behavior for external links
+    if (!href.startsWith('#')) {
+      return;
+    }
+
     e.preventDefault();
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
@@ -96,7 +102,8 @@ const Navbar = () => {
               type="button"
               className="bg-gray-100 dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
               <span className="sr-only">Open main menu</span>
               <svg className="block h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -107,24 +114,31 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="md:hidden" id="mobile-menu">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={(e) => handleSmoothScroll(e, item.href)}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
-                activeSection === item.href.substring(1)
-                  ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                  : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-              }`}
-            >
-              {item.name}
-            </a>
-          ))}
+      {isMobileMenuOpen && (
+        <div className="md:hidden" id="mobile-menu">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => {
+                  handleSmoothScroll(e, item.href);
+                  setIsMobileMenuOpen(false);
+                }}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
+                  activeSection === item.href.substring(1)
+                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                }`}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
