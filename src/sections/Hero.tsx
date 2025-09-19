@@ -68,10 +68,12 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <a
-            href="#about"
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-all duration-300 font-medium text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105"
           >
-            View My Work
+            View My CV
           </a>
         </motion.div>
       </motion.div>

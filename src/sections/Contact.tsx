@@ -38,15 +38,17 @@ export default function Contact() {
       description: 'Send me an email',
     },
     {
-      name: 'Twitter',
+      name: 'Medium',
       icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        <svg className="w-6 h-6" viewBox="0 0 1043.63 592.71" fill="currentColor" aria-hidden="true">
+          <path d="M588.67 296.36c0 163.67-131.46 296.36-293.51 296.36S1.65 460.03 1.65 296.36 133.11 0 295.16 0s293.51 132.69 293.51 296.36z"/>
+          <path d="M940.8 296.36c0 154.5-65.73 279.74-146.86 279.74S647.08 450.86 647.08 296.36 712.81 16.62 793.94 16.62 940.8 141.86 940.8 296.36z"/>
+          <path d="M1043.63 296.36c0 143.47-23.39 259.67-52.24 259.67s-52.24-116.2-52.24-259.67S962.54 36.69 991.39 36.69s52.24 116.2 52.24 259.67z"/>
         </svg>
       ),
-      url: 'https://twitter.com/athmisaynee',
-      color: 'hover:bg-black',
-      description: 'Follow me on Twitter/X',
+      url: 'https://medium.com/@athmiraveendran',
+      color: 'hover:bg-green-700',
+      description: 'Read my articles on Medium',
     },
   ];
 
