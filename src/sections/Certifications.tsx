@@ -35,7 +35,7 @@ export default function Certifications() {
             date="2025"
             description="Advanced certification in AI Agents development, covering autonomous systems, intelligent automation, and AI-driven solutions."
             skills={["AI Agents", "Automation", "Machine Learning", "Intelligent Systems", "Python"]}
-            certificateUrl="/Ai%20agents.webp"
+            certificateUrl="/ai-agents.webp"
           />
 
           <CertificationCard
@@ -44,7 +44,7 @@ export default function Certifications() {
             date="2024"
             description="Comprehensive data analysis certification covering statistical analysis, data visualization, and business intelligence techniques."
             skills={["Data Analysis", "Statistics", "Data Visualization", "Business Intelligence", "SQL", "Excel"]}
-            certificateUrl="/Dataanalyst.pdf"
+            certificateUrl="/data-analyst-certificate.pdf"
           />
 
           <CertificationCard
@@ -53,7 +53,7 @@ export default function Certifications() {
             date="2024"
             description="Foundational Python programming certification covering syntax, data structures, algorithms, and practical programming applications."
             skills={["Python", "Programming Fundamentals", "Data Structures", "Algorithms", "Problem Solving"]}
-            certificateUrl="/Python_for_Beginners_E-Certificate.pdf"
+            certificateUrl="/python-beginners-certificate.pdf"
           />
 
           <CertificationCard
@@ -62,7 +62,7 @@ export default function Certifications() {
             date="2024"
             description="Web design fundamentals certification covering HTML, CSS, responsive design principles, and modern web development practices."
             skills={["HTML", "CSS", "Responsive Design", "Web Development", "UI/UX Basics"]}
-            certificateUrl="/Web_Design_for_Beginners_E-Certificate.pdf"
+            certificateUrl="/web-design-beginners-certificate.pdf"
           />
         </div>
 
