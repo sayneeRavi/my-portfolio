@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-black overflow-hidden"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-black overflow-hidden pt-16"
     >
       {/* Enhanced Sparkles Background */}
       <BackgroundSparkles />
