@@ -29,6 +29,7 @@ export default function Certifications() {
         </motion.p>
 
         <div className="grid gap-6 md:grid-cols-2">
+          {/* TODO: replace with the real issuing organization/platform */}
           <CertificationCard
             title="AI Agents Certification"
             issuer="Professional Development"
@@ -38,6 +39,7 @@ export default function Certifications() {
             certificateUrl="/ai-agents.webp"
           />
 
+          {/* TODO: replace with the real issuing organization/platform */}
           <CertificationCard
             title="Data Analyst Certification"
             issuer="Professional Development"
@@ -47,6 +49,7 @@ export default function Certifications() {
             certificateUrl="/data-analyst-certificate.pdf"
           />
 
+          {/* TODO: replace with the real issuing organization/platform */}
           <CertificationCard
             title="Python for Beginners"
             issuer="E-Learning Platform"
@@ -56,6 +59,7 @@ export default function Certifications() {
             certificateUrl="/python-beginners-certificate.pdf"
           />
 
+          {/* TODO: replace with the real issuing organization/platform */}
           <CertificationCard
             title="Web Design for Beginners"
             issuer="E-Learning Platform"
