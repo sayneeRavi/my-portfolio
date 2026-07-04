@@ -1,8 +1,5 @@
 'use client';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import { useState, useEffect, MouseEvent } from 'react';
 
 type NavItem = {
@@ -43,7 +40,6 @@ const Navbar = () => {
     }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;

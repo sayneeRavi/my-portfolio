@@ -33,10 +33,11 @@ export default function Hero() {
         <div className="relative mb-6 mx-auto">
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 blur-lg opacity-30 animate-pulse"></div>
           <Image
-            src="/profile-pic.PNG"
-            alt="Athmi"
+            src="/profile-pic.webp"
+            alt="Athmisaynee Raveendran"
             width={200}
             height={200}
+            priority
             className="relative rounded-full shadow-2xl w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 object-cover border-4 border-white dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300"
           />
         </div>
