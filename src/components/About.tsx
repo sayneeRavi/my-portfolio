@@ -1,68 +1,67 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import BackgroundSparkles from '@/components/BackgroundSparkles';
-import InfoCard from '@/components/InfoCard';
+import Image from 'next/image';
+import Section from '@/components/Section';
+import Reveal from '@/components/Reveal';
+import DetailTip from '@/components/DetailTip';
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative py-16 px-6 bg-white dark:bg-[#0f0f0f] overflow-hidden scroll-mt-20"
-    >
-      <BackgroundSparkles />
+    <Section id="about" number="01" title="About">
+      <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-start">
+        <div className="space-y-5 text-base leading-relaxed text-muted md:text-lg">
+          <Reveal>
+            <p className="text-lg font-semibold text-ink md:text-xl">
+              I sit at the intersection of data and product: analytical enough
+              to find the signal, engineer enough to ship what it suggests.
+            </p>
+          </Reveal>
 
-      <div className="max-w-4xl mx-auto relative z-10 space-y-12">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center text-black dark:text-white"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          About Me
-        </motion.h2>
+          <Reveal delay={0.1}>
+            <p>
+              I&apos;m a final-year Software Engineering student at the{' '}
+              <DetailTip detail="Sri Lanka's leading engineering university — consistently top-ranked for technology programs.">
+                University of Moratuwa
+              </DetailTip>
+              , drawn to the stories numbers tell. For{' '}
+              <DetailTip detail="A client project where I handled the full cycle: requirements, UI design, backend, database integration, and deployment.">
+                MillenniumIT ESP
+              </DetailTip>
+              , I built an enterprise RMA system end-to-end — my favorite kind
+              of work, where analysis meets something people actually use.
+            </p>
+          </Reveal>
 
-        <motion.p
-          className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          Hi, I’m <strong className="text-black dark:text-white">Athmisaynee Raveendran</strong>,
-          a third-year undergraduate at the University of Moratuwa pursuing a BSc in
-          Information Technology. I’m deeply curious about patterns and passionate about
-          data—diving into numbers to uncover the stories they tell.
-          <br /><br />
-          I enjoy building full-stack apps centered around data analytics, making
-          insights intuitive and user-friendly. For my Millennium IT client project,
-          I handled everything from gathering requirements and designing UIs
-          to developing backend, integrating databases, and deploying the solution.
-          <br /><br />
-          As Level-3 Batch Representative for Batch 22 at UoM, I organized tech events
-          empowering peers to land internships. My leadership roots trace back to
-          being a school prefect twice.
-          <br /><br />
-          Finishing as a finalist in BrainStorm 2025—a top healthcare innovation
-          competition—strengthened my real-world problem-solving passion.
-          <br /><br />
-          Outside tech, I’m an ambivert, cricket player, beach lover, and hiker.
-          I enjoy storytelling, music, and connecting—whether in code or casual chats.
-          <br /><br />
-          <strong className="text-black dark:text-white">
-            Let’s connect and build something amazing together. ✨
-          </strong>
-        </motion.p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <InfoCard
-            title="Projects"
-            value="4+"
-            link="https://github.com/sayneeRavi?tab=repositories"
-          />
-          <InfoCard title="Years Coding" value="3+" />
-          <InfoCard title="Client Projects" value="1" />
+          <Reveal delay={0.2}>
+            <p>
+              Outside the editor, I served as{' '}
+              <DetailTip detail="Level-3 representative for Batch 22 — organized tech events that helped peers prepare for and land internships.">
+                Batch Representative
+              </DetailTip>{' '}
+              at UoM and reached the finals of{' '}
+              <DetailTip detail="A national healthcare-innovation competition; our team was a 2025 finalist.">
+                BrainStorm 2025
+              </DetailTip>
+              . I&apos;m also a cricket player, a hiker, and a sucker for a
+              good story — in data or otherwise.
+            </p>
+          </Reveal>
         </div>
+
+        <Reveal delay={0.15} className="justify-self-center md:justify-self-end">
+          <div className="relative">
+            <Image
+              src="/profile-pic.webp"
+              alt="Athmisaynee Raveendran"
+              width={280}
+              height={280}
+              className="h-52 w-52 rounded-[12px] border border-hairline object-cover md:h-64 md:w-64"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-3 -right-3 -z-10 h-full w-full rounded-[12px] border border-teal/40"
+            />
+          </div>
+        </Reveal>
       </div>
-    </section>
+    </Section>
   );
 }

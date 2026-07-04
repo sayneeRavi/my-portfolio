@@ -1,24 +1,31 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/sections/Hero";
-import About from "@/components/About";
-import Education from '@/sections/Education';
-import Certifications from '@/sections/Certifications';
+import Navbar from '@/components/Navbar';
+import Hero from '@/sections/Hero';
+import About from '@/components/About';
+import Journey from '@/sections/Journey';
+import Skills from '@/sections/Skills';
 import Projects from '@/sections/Projects';
+import FieldNotes from '@/sections/FieldNotes';
 import Contact from '@/sections/Contact';
-import BackgroundSparkles from "@/components/BackgroundSparkles";
-
+import { SparklineDivider } from '@/components/Sparkline';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen text-black overflow-hidden">
-      <BackgroundSparkles />
+    <>
       <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <Certifications />
-      <Projects />
-      <Contact />
-    </main>
+      <main className="min-h-screen">
+        <Hero />
+        <About />
+        <SparklineDivider />
+        <Journey />
+        <SparklineDivider />
+        <Skills />
+        <SparklineDivider />
+        <Projects />
+        <SparklineDivider />
+        <FieldNotes />
+        <SparklineDivider />
+        <Contact />
+      </main>
+    </>
   );
 }

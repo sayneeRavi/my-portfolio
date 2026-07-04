@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Manrope, JetBrains_Mono } from "next/font/google";
-import BackgroundSparkles from "@/components/BackgroundSparkles";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -89,9 +88,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${manrope.variable} ${jetbrainsMono.variable} antialiased relative`}
+        className={`${manrope.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <BackgroundSparkles /> {/* sparkles shown on all pages */}
         {children}
       </body>
     </html>

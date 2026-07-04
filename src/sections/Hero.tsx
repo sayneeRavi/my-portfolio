@@ -1,83 +1,132 @@
 'use client';
 
-import { Typewriter } from 'react-simple-typewriter';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import BackgroundSparkles from '@/components/BackgroundSparkles';
+import { useState, useEffect } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { SparklineMotif } from '@/components/Sparkline';
+import { projects } from '@/data/projects';
+
+const TAGLINES = [
+  'I turn data into decisions',
+  'I build full-stack products',
+  'I tell stories with data',
+];
+
+const TYPE_MS = 65;
+const DELETE_MS = 35;
+const HOLD_MS = 2200;
+
+function useTypewriter(words: string[], enabled: boolean) {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [text, setText] = useState(enabled ? '' : words[0]);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    if (!enabled) return;
+
+    const word = words[wordIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!deleting && text === word) {
+      timeout = setTimeout(() => setDeleting(true), HOLD_MS);
+    } else if (deleting && text === '') {
+      setDeleting(false);
+      setWordIndex((i) => (i + 1) % words.length);
+    } else {
+      timeout = setTimeout(
+        () => setText(word.slice(0, text.length + (deleting ? -1 : 1))),
+        deleting ? DELETE_MS : TYPE_MS
+      );
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, deleting, wordIndex, words, enabled]);
+
+  return text;
+}
+
+const STATS = [
+  { value: `${projects.length}`, label: 'projects built' },
+  { value: '3+', label: 'years coding' },
+  { value: '3', label: 'articles written' },
+];
 
 export default function Hero() {
+  const reduceMotion = useReducedMotion();
+  const tagline = useTypewriter(TAGLINES, !reduceMotion);
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-black overflow-hidden pt-16"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6"
     >
-      {/* Enhanced Sparkles Background */}
-      <BackgroundSparkles />
-      
-      {/* Additional floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-70"></div>
-        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-purple-400 rounded-full animate-pulse opacity-60 animation-delay-1000"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce opacity-50 animation-delay-2000"></div>
-        <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-yellow-400 rounded-full animate-ping opacity-40 animation-delay-3000"></div>
-        <div className="absolute bottom-1/4 right-1/2 w-2 h-2 bg-green-400 rounded-full animate-pulse opacity-30 animation-delay-4000"></div>
+      <div className="mx-auto w-full max-w-5xl">
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="mb-5 font-mono text-sm text-teal md:text-base">
+            Hi, my name is
+          </p>
+
+          <h1 className="mb-3 text-4xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-7xl">
+            Athmisaynee Raveendran.
+          </h1>
+
+          <p
+            className="mb-6 min-h-[1.5em] text-2xl font-bold text-muted sm:text-3xl md:text-4xl"
+            aria-label={TAGLINES[0]}
+          >
+            <span aria-hidden="true">
+              {tagline}
+              <span
+                className={`text-teal ${reduceMotion ? '' : 'animate-pulse'}`}
+              >
+                _
+              </span>
+            </span>
+          </p>
+
+          <p className="mb-10 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+            Data analyst and full-stack developer — a final-year Software
+            Engineering student at the University of Moratuwa, Sri Lanka.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="rounded-[6px] bg-teal px-6 py-3 font-mono text-sm font-semibold text-on-teal transition-colors hover:bg-teal-hover"
+            >
+              View my work →
+            </a>
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-[6px] border border-teal px-6 py-3 font-mono text-sm text-teal transition-colors hover:bg-teal/10"
+            >
+              Download CV
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Stats strip — GitHub repo count goes live here in Phase 3 */}
+        <motion.dl
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 flex flex-wrap gap-x-12 gap-y-6 border-t border-hairline pt-8"
+        >
+          {STATS.map((stat) => (
+            <div key={stat.label} className="flex flex-col-reverse">
+              <dt className="font-mono text-xs text-muted">{stat.label}</dt>
+              <dd className="text-3xl font-bold text-ink">{stat.value}</dd>
+            </div>
+          ))}
+        </motion.dl>
       </div>
 
-      {/* Hero Content */}
-      <motion.div
-        className="relative z-10 flex flex-col items-center"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="relative mb-6 mx-auto">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 blur-lg opacity-30 animate-pulse"></div>
-          <Image
-            src="/profile-pic.webp"
-            alt="Athmisaynee Raveendran"
-            width={200}
-            height={200}
-            priority
-            className="relative rounded-full shadow-2xl w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 object-cover border-4 border-white dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300"
-          />
-        </div>
-
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black dark:text-white">
-          Hi, I’m <span className="text-blue-600 dark:text-blue-400 font-extrabold">Athmi</span>
-        </h1>
-
-        <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 px-4 max-w-2xl mx-auto">
-          <Typewriter
-            words={[
-              'Web Developer 💻',
-              'UI/UX Enthusiast 🎨',
-              'Student @ UoM 🎓',
-              'Tech Explorer 🌍',
-            ]}
-            loop={true}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1500}
-          />
-        </h2>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <a
-            href="/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-all duration-300 font-medium text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            View My CV
-          </a>
-        </motion.div>
-      </motion.div>
+      <SparklineMotif className="absolute bottom-8 right-0 h-32 w-[min(480px,80vw)]" />
     </section>
   );
 }
